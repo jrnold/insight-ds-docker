@@ -1,0 +1,14 @@
+name: insight
+dependencies:
+- flask
+- jupyter
+- matplotlib
+- numpy
+- pandas
+- python=3.*
+- scikit-learn
+- scipy
+- sqlalchemy
+- psycopg2
+- pip:
+  - sqlalchmey_utils

@@ -1,0 +1,14 @@
+version: "3.2"
+services:
+  insight:
+    build: datascience
+    depends_on:
+      - db
+    ports:
+      - "8888:8888"
+    volumes:
+      - ".:/home/jovyan/work"
+  birth_db:
+    build: birth_db
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
