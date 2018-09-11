@@ -10,5 +10,7 @@ services:
       - ".:/home/jovyan/work"
   birth_db:
     build: birth_db
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_PASSWORD: mysecretpassword
