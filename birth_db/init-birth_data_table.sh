@@ -2,7 +2,7 @@
 set -e
 createdb birth_db
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname birth_db <<-EOSQL
-CREATE TABLE birth_data_table (
+CREATE TABLE birth_data (
 	index BIGSERIAL NOT NULL,
 	alcohol_use FLOAT(53),
 	anencephaly FLOAT(53),
@@ -44,5 +44,5 @@ CREATE TABLE birth_data_table (
 	CONSTRAINT birth_data_table_pk PRIMARY KEY (index)
 );
 
-\copy birth_data_table from /docker-entrypoint-initdb.d/births2012_downsampled.csv with csv header
+\copy birth_data from /docker-entrypoint-initdb.d/births2012_downsampled.csv with csv header
 EOSQL

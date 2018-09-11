@@ -3,7 +3,7 @@ services:
   insight:
     build: datascience
     depends_on:
-      - db
+      - birth_db
     ports:
       - "8888:8888"
     volumes:
